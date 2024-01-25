@@ -3,11 +3,14 @@
 
 
 C.  I edited the code on 'mainscreen.html' file on lines 40-71 to add the part names and lines 109-140 to add the product names. I also changed the header to 
-    print "Electronics", as well as the title to print "My Electronics Shop". 
+    print "Electronics" on line 19, as well as the title to print "My Electronics Shop" on line 14. 
 
 
-D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
-
+D.  First, I am a new template called about.html. Within about.html I copy and pasted the first 15 lines of code from my mainscreen.html file so that my about 
+    screen will have the same styling/ formatting and changed the tile on line 14 to "About". The about.html file also contains simple informative text about the 
+    company as well as a hyperlink to go back to the main screen. Secondly, I created a new controller class called "AboutController" under 
+    src/main/java/com.example.demo/controllers. Within the AboutController file, I added the @Controller tag for the class and created a aboutPage() method which
+    includes the @GetMapping tag. Lastly, I added a hyperlink on the about link page on mainscreen.html line 21 that redirects me back to the main screen page. 
 
 E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
 
