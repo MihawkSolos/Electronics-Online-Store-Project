@@ -21,10 +21,14 @@ E.  Firstly, I deleted my previous changed to the 'mainscreen.html' file where I
     equal to zero and if it is then I made 5 instances for the products and assigned the values for each and added them to the productRepository list. 
 
 
-F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
-•  The “Buy Now” button must be next to the buttons that update and delete products.
-•  The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
-•  Display a message that indicates the success or failure of a purchase.
+F.  I added a buy now button on the mainscreen.html file lines 87-90 which says "Buy Now". After that I created a BuyNowProductController java file, this file is
+    responsible for handling the logic whenever a user clicks on the button and redirects them to either a purchaseError or purchaseSuccess page. The 
+    BuyNowProductController file is also responsible for updating the product inventory whenever an item is bought. I do this by checking to see if the inventory 
+    is equal to zero and if it is then I call a purchaseError method which redirects to me a new purhcaseError.html file that I created. Otherwise, I call the 
+    purchaseSuccess method and update the inventory by decrementing one and saving it. As I said, I created two new .html files, purchaseSuccess and purchaseError.
+    All they do is print out a simple message and have a button to go back to the main screen. I also edited my about.html file at this point because I forgot to
+    add some text into the file before. 
+
 
 
 G.  Modify the parts to track maximum and minimum inventory by doing the following:
