@@ -12,10 +12,13 @@ D.  First, I am a new template called about.html. Within about.html I copy and p
     src/main/java/com.example.demo/controllers. Within the AboutController file, I added the @Controller tag for the class and created a aboutPage() method which
     includes the @GetMapping tag. Lastly, I added a hyperlink on the about link page on mainscreen.html line 21 that redirects me back to the main screen page. 
 
-E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
 
-
-Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your products. When duplicate items are added, make a “multi-pack” part.
+E.  Firstly, I deleted my previous changed to the 'mainscreen.html' file where I added lines of code to add rows with the part and product names since I thought
+    that I was supposed to do it at that time. Secondly, I went to the 'BootStrapData.java' file and edited the code from line 41-83. Within those lines of code 
+    I first created two variable to check the count of both partRepository and productsRepository. Then, I check to see if partsCount variable is equal to zero, 
+    and if it is then I created 5 instances, one for each part and set the values for each of them and added them to the outsourcedPartRepository list. I also 
+    edited lines 88-44 to check for each of the part names and assign thePart value to part. Lastly, I edited lines 104-115 to check if productsCount variable is 
+    equal to zero and if it is then I made 5 instances for the products and assigned the values for each and added them to the productRepository list. 
 
 
 F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
