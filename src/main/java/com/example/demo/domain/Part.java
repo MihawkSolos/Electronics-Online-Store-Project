@@ -29,6 +29,12 @@ public abstract class Part implements Serializable {
     @Min(value = 0, message = "Inventory value must be positive")
     int inv;
 
+    @Min(value = 0, message = "Minimum inventory must be positive")
+    int minInv;
+
+    @Min(value = 0, message = "Maximum inventory must be positive")
+    int maxInv;
+
     @ManyToMany
     @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),
             inverseJoinColumns=@JoinColumn(name="product_id"))
@@ -37,17 +43,44 @@ public abstract class Part implements Serializable {
     public Part() {
     }
 
-    public Part(String name, double price, int inv) {
+    // added maxInv and minInv fields
+    public Part(String name, double price, int inv, int minInv, int maxInv) {
         this.name = name;
         this.price = price;
         this.inv = inv;
+        this.minInv = minInv;
+        this.maxInv = maxInv;
     }
 
-    public Part(long id, String name, double price, int inv) {
+    // added maxInv and minInv fields
+    public Part(long id, String name, double price, int inv, int minInv, int maxInv) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.inv = inv;
+        this.minInv = minInv;
+        this.maxInv = maxInv;
+    }
+
+    // method to check if inventory is within bounds
+    public boolean isInvValid() {
+        return inv >= minInv && inv <= maxInv;
+    }
+
+
+// getter methods for both maxInv and minInv
+    public int getMaxInv() {
+        return maxInv;
+    }
+    public int getMinInv() {
+        return minInv;
+    }
+// setter methods for both maxInv and minInv
+    public void setMinInv(int minInv) {
+        this.minInv = minInv;
+    }
+    public void setMaxInv(int maxInv) {
+        this.maxInv = maxInv;
     }
 
     public long getId() {

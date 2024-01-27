@@ -9,15 +9,15 @@ import com.example.demo.service.PartService;
 import com.example.demo.service.PartServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -30,27 +30,36 @@ public class AddOutsourcedPartController {
     @Autowired
     private ApplicationContext context;
 
+    // Method to check if inventory is within the valid range
+    private boolean isInvValid(int inv) {
+        return inv >= 0 && inv <= 50;
+    }
+
     @GetMapping("/showFormAddOutPart")
-    public String showFormAddOutsourcedPart(Model theModel){
-        Part part=new OutsourcedPart();
-        theModel.addAttribute("outsourcedpart",part);
+    public String showFormAddOutsourcedPart(Model theModel) {
+        Part part = new OutsourcedPart();
+        theModel.addAttribute("outsourcedpart", part);
         return "OutsourcedPartForm";
     }
 
     @PostMapping("/showFormAddOutPart")
-    public String submitForm(@Valid @ModelAttribute("outsourcedpart") OutsourcedPart part, BindingResult bindingResult, Model theModel){
-        theModel.addAttribute("outsourcedpart",part);
-        if(bindingResult.hasErrors()){
+    public String submitForm(@Valid @ModelAttribute("outsourcedpart") OutsourcedPart part, BindingResult bindingResult, Model theModel) {
+        theModel.addAttribute("outsourcedpart", part);
+
+        // Validate inventory range
+        if (!isInvValid(part.getInv())) {
+            bindingResult.rejectValue("inv", "invalid.range", "Inventory is outside of the valid range.");
             return "OutsourcedPartForm";
         }
-        else{
-        OutsourcedPartService repo=context.getBean(OutsourcedPartServiceImpl.class);
-        OutsourcedPart op=repo.findById((int)part.getId());
-        if(op!=null)part.setProducts(op.getProducts());
+
+        if (bindingResult.hasErrors()) {
+            return "OutsourcedPartForm";
+        } else {
+            OutsourcedPartService repo = context.getBean(OutsourcedPartServiceImpl.class);
+            OutsourcedPart op = repo.findById((int) part.getId());
+            if (op != null) part.setProducts(op.getProducts());
             repo.save(part);
-        return "confirmationaddpart";}
+            return "confirmationaddpart";
+        }
     }
-
-
-
 }

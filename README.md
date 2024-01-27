@@ -31,12 +31,12 @@ F.  I added a buy now button on the mainscreen.html file lines 87-90 which says 
 
 
 
-G.  Modify the parts to track maximum and minimum inventory by doing the following:
-•  Add additional fields to the part entity for maximum and minimum inventory.
-•  Modify the sample inventory to include the maximum and minimum fields.
-•  Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values.
-•  Rename the file the persistent storage is saved to.
-•  Modify the code to enforce that the inventory is between or at the minimum and maximum value.
+G.  Adding the maxInv and minInv variables on lines 32-36. I also updated the constructor methods to include the two new variables as well as added getter/setter 
+    methods for both (lines 63-74 for the getter/setter methods) all in Part.java file. Then, I went into the BootStrapDate.java file and setMaxInv and setMinInv 
+    values for each of the parts. After that I added both maxInv and minInv values in both the InhousePartForm and OutsourcedPartForm html files (lines 26-31). Then, I renamed my 
+    database file on my pc to 'springBootDatabase', and also renamed it on the application.properties file line 6. Then I went back into the Part.java file and 
+    added a method to check if an inventory is valid on lines 66-68. Edited lines 40-41 and 50-51 on the mainscreen.html file to add columns for max/ min 
+    inventory values. I added a isInvValid method on both the AddInHousePartController and AddOutsourcedPartController files. 
 
 
 H.  Add validation for between or at the maximum and minimum fields. The validation must include the following:

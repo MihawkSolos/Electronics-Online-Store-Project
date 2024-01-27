@@ -2,6 +2,7 @@ package com.example.demo.domain;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.validation.constraints.Min;
 
 /**
  *
