@@ -52,4 +52,4 @@ I.  Added two unit tests to check for maximum/ minimum inventory on PartTest.jav
     partOut.
 
 
-J.  Remove the class files for any unused validators in order to clean your code.
+J.  After checking the usages within the validators folder, IntelliJ shows that all the files within the folder were being used, so I did not delete any of them. 
