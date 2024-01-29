@@ -39,10 +39,13 @@ G.  Adding the maxInv and minInv variables on lines 32-36. I also updated the co
     inventory values. I added a isInvValid method on both the AddInHousePartController and AddOutsourcedPartController files. 
 
 
-H.  Add validation for between or at the maximum and minimum fields. The validation must include the following:
-•  Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.
-•  Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.
-•  Display error messages when adding and updating parts if the inventory is greater than the maximum.
+H.  I edited the AddinHousePartController file lines 54-64 to include two more if-statements to check if the user inputted inventory is less than or greater than 
+    the min and max inventory and returning the necessary error messages. I also did the same thing in the AddOutsourcedPartController file lines 49-59. I also 
+    edited both the InhousePartForm and OutSourcedPartForm files so that the error messages now occur right above the submit button instead of after reading the 
+    inventory (line 31 for inHousePartForm, line 32 for OutSourcedPartForm). Then I went into the EnufPartsValidator file and added lines 32-42 to check and see 
+    if adding/ updating a product would cause an associated part to fall below the minimum whenever the user is trying to update a product with the associated part.
+    I currently can get two error messages, one for if the price of the product is below the price of the parts, and the other for if adding a part to a product 
+    would lead to that parts inventory being lower than its minimum inventory. 
 
 
 I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
