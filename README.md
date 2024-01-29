@@ -48,7 +48,8 @@ H.  I edited the AddinHousePartController file lines 54-64 to include two more i
     would lead to that parts inventory being lower than its minimum inventory. 
 
 
-I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
+I.  Added two unit tests to check for maximum/ minimum inventory on PartTest.java file in the test package, lines 160-178. Both units test for both partIn and 
+    partOut.
 
 
 J.  Remove the class files for any unused validators in order to clean your code.
