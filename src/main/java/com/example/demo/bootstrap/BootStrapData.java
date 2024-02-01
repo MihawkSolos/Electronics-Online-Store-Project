@@ -39,58 +39,58 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-            long partsCount = partRepository.count();
-            long productsCount = productRepository.count();
+        long partsCount = partRepository.count();
+        long productsCount = productRepository.count();
 
-                if(partsCount == 0) {
+        if(partsCount == 0) {
 
-                    OutsourcedPart part1 = new OutsourcedPart();
-                    part1.setCompanyName("My Electronics Shop");
-                    part1.setName("Microcontrollers");
-                    part1.setInv(36);
-                    part1.setMinInv(0);
-                    part1.setMaxInv(50);
-                    part1.setPrice(5.0);
-                    part1.setId(1L);
-                    outsourcedPartRepository.save(part1);
+            OutsourcedPart part1 = new OutsourcedPart();
+            part1.setCompanyName("My Electronics Shop");
+            part1.setName("Microcontrollers");
+            part1.setInv(36);
+            part1.setMinInv(0);
+            part1.setMaxInv(50);
+            part1.setPrice(5.0);
+            part1.setId(1L);
+            outsourcedPartRepository.save(part1);
 
-                    OutsourcedPart part2 = new OutsourcedPart();
-                    part2.setName("Resistors");
-                    part2.setInv(44);
-                    part2.setMinInv(0);
-                    part2.setMaxInv(50);
-                    part2.setPrice(20.0);
-                    part2.setId(2L);
-                    outsourcedPartRepository.save(part2);
+            OutsourcedPart part2 = new OutsourcedPart();
+            part2.setName("Resistors");
+            part2.setInv(44);
+            part2.setMinInv(0);
+            part2.setMaxInv(50);
+            part2.setPrice(20.0);
+            part2.setId(2L);
+            outsourcedPartRepository.save(part2);
 
-                    OutsourcedPart part3 = new OutsourcedPart();
-                    part3.setName("Capacitors");
-                    part3.setInv(35);
-                    part3.setMinInv(0);
-                    part3.setMaxInv(50);
-                    part3.setPrice(10.0);
-                    part3.setId(3L);
-                    outsourcedPartRepository.save(part3);
+            OutsourcedPart part3 = new OutsourcedPart();
+            part3.setName("Capacitors");
+            part3.setInv(35);
+            part3.setMinInv(0);
+            part3.setMaxInv(50);
+            part3.setPrice(10.0);
+            part3.setId(3L);
+            outsourcedPartRepository.save(part3);
 
-                    OutsourcedPart part4 = new OutsourcedPart();
-                    part4.setName("LEDs");
-                    part4.setInv(41);
-                    part4.setMinInv(0);
-                    part4.setMaxInv(50);
-                    part4.setPrice(15.0);
-                    part4.setId(4L);
-                    outsourcedPartRepository.save(part4);
+            OutsourcedPart part4 = new OutsourcedPart();
+            part4.setName("LEDs");
+            part4.setInv(41);
+            part4.setMinInv(0);
+            part4.setMaxInv(50);
+            part4.setPrice(15.0);
+            part4.setId(4L);
+            outsourcedPartRepository.save(part4);
 
-                    OutsourcedPart part5 = new OutsourcedPart();
-                    part5.setName("Transistors");
-                    part5.setInv(22);
-                    part5.setMinInv(0);
-                    part5.setMaxInv(50);
-                    part5.setPrice(50.0);
-                    part5.setId(5L);
-                    outsourcedPartRepository.save(part5);
+            OutsourcedPart part5 = new OutsourcedPart();
+            part5.setName("Transistors");
+            part5.setInv(22);
+            part5.setMinInv(0);
+            part5.setMaxInv(50);
+            part5.setPrice(50.0);
+            part5.setId(5L);
+            outsourcedPartRepository.save(part5);
 
-                }
+        }
 
 
         OutsourcedPart thePart=null;

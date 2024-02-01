@@ -42,7 +42,7 @@ G.  Adding the maxInv and minInv variables on lines 32-36. I also updated the co
 H.  I edited the AddinHousePartController file lines 54-64 to include two more if-statements to check if the user inputted inventory is less than or greater than 
     the min and max inventory and returning the necessary error messages. I also did the same thing in the AddOutsourcedPartController file lines 49-59. I also 
     edited both the InhousePartForm and OutSourcedPartForm files so that the error messages now occur right above the submit button instead of after reading the 
-    inventory (line 31 for inHousePartForm, line 32 for OutSourcedPartForm). Then I went into the EnufPartsValidator file and added lines 32-42 to check and see 
+    inventory (line 31 for inHousePartForm, line 32 for OutSourcedPartForm). Then I went into the EnufPartsValidator file and added lines 36-38 to check and see 
     if adding/ updating a product would cause an associated part to fall below the minimum whenever the user is trying to update a product with the associated part.
     I currently can get two error messages, one for if the price of the product is below the price of the parts, and the other for if adding a part to a product 
     would lead to that parts inventory being lower than its minimum inventory. 
@@ -52,4 +52,4 @@ I.  Added two unit tests to check for maximum/ minimum inventory on PartTest.jav
     partOut.
 
 
-J.  After checking the usages within the validators folder, IntelliJ shows that all the files within the folder were being used, so I did not delete any of them. 
+J.  I cleaned the code by deleting the DeletePartValidator.java file since it wasn't being used. 

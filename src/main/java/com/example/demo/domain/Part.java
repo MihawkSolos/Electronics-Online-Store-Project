@@ -68,14 +68,14 @@ public abstract class Part implements Serializable {
     }
 
 
-// getter methods for both maxInv and minInv
+    // getter methods for both maxInv and minInv
     public int getMaxInv() {
         return maxInv;
     }
     public int getMinInv() {
         return minInv;
     }
-// setter methods for both maxInv and minInv
+    // setter methods for both maxInv and minInv
     public void setMinInv(int minInv) {
         this.minInv = minInv;
     }
